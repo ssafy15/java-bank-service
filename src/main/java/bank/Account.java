@@ -25,20 +25,20 @@ public class Account {
     }
 
     public void deposit(int amount) {
-        if(isNegativeAmount(amount))
+        if(isNotPositive(amount))
             return;
         balance += amount;
     }
 
     public void withdraw(int amount){
-        if(isNegativeAmount(amount))
+        if(isNotPositive(amount))
            return;
         if(isWithdrawable(amount))
             balance -= amount;
     }
 
-    private boolean isNegativeAmount(int amount) {
-        return amount < 0;
+    private boolean isNotPositive(int amount) {
+        return amount <= 0;
     }
 
     private boolean isWithdrawable(int amount) {
