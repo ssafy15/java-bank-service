@@ -7,10 +7,14 @@ public class BankService {
     private int existAccountCount = 0;
 
     void addAccount(Account account) {
-        if(account == null || existAccountCount >= MAX_SIZE)
+        if(account == null || isFulled())
             return;
 
         accounts[existAccountCount++] = account;
+    }
+
+    private boolean isFulled() {
+        return existAccountCount >= MAX_SIZE;
     }
 
     public int getTotalBalance(){
