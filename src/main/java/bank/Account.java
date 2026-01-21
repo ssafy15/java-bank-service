@@ -3,8 +3,9 @@ package bank;
 import static java.lang.Math.max;
 
 public class Account {
-    protected String owner;
-    protected int balance;
+    // owner가 변경되어야 하는 요구사항이 없으므로 final 키워드 적용
+    private final String owner;
+    private int balance;
 
     {
         System.out.println("Account created");
