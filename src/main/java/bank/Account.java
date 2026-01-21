@@ -1,7 +1,5 @@
 package bank;
 
-import static java.lang.Math.max;
-
 public class Account {
     // owner가 변경되어야 하는 요구사항이 없으므로 final 키워드 적용
     private final String owner;
@@ -17,7 +15,7 @@ public class Account {
 
     public Account(String owner, int balance) {
         // 1. 잔액은 항상 0 이상이어야 한다
-        this.balance = max(0, balance);
+        this.balance = Math.max(balance, 0);
         this.owner = owner;
     }
 
